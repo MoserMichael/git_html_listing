@@ -17,5 +17,5 @@ This script uses [ansi2html.sh](https://www.pixelbeat.org/scripts/ansi2html.sh)
 
 
 ## Example html listing for this repository
-
-[see link](html_history_listing/index.html)
+  
+[see link](https://mosermichael.github.io/git_html_listing/html_history_listing/index.html)
