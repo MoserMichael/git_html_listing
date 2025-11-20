@@ -1,0 +1,844 @@
+<html><body><h2>History listing for file: ansi2html.sh</h2>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+pre { white-space: pre-wrap; }
+.ef0,.f0 { color: #000000; } .eb0,.b0 { background-color: #000000; }
+.ef1,.f1 { color: #AA0000; } .eb1,.b1 { background-color: #AA0000; }
+.ef2,.f2 { color: #00AA00; } .eb2,.b2 { background-color: #00AA00; }
+.ef3,.f3 { color: #AA5500; } .eb3,.b3 { background-color: #AA5500; }
+.ef4,.f4 { color: #0000AA; } .eb4,.b4 { background-color: #0000AA; }
+.ef5,.f5 { color: #AA00AA; } .eb5,.b5 { background-color: #AA00AA; }
+.ef6,.f6 { color: #00AAAA; } .eb6,.b6 { background-color: #00AAAA; }
+.ef7,.f7 { color: #AAAAAA; } .eb7,.b7 { background-color: #AAAAAA; }
+.ef8, .f0 > .bold,.bold > .f0 { color: #555555; font-weight: normal; }
+.ef9, .f1 > .bold,.bold > .f1 { color: #FF5555; font-weight: normal; }
+.ef10,.f2 > .bold,.bold > .f2 { color: #55FF55; font-weight: normal; }
+.ef11,.f3 > .bold,.bold > .f3 { color: #FFFF55; font-weight: normal; }
+.ef12,.f4 > .bold,.bold > .f4 { color: #5555FF; font-weight: normal; }
+.ef13,.f5 > .bold,.bold > .f5 { color: #FF55FF; font-weight: normal; }
+.ef14,.f6 > .bold,.bold > .f6 { color: #55FFFF; font-weight: normal; }
+.ef15,.f7 > .bold,.bold > .f7 { color: #FFFFFF; font-weight: normal; }
+.eb8  { background-color: #555555; }
+.eb9  { background-color: #FF5555; }
+.eb10 { background-color: #55FF55; }
+.eb11 { background-color: #FFFF55; }
+.eb12 { background-color: #5555FF; }
+.eb13 { background-color: #FF55FF; }
+.eb14 { background-color: #55FFFF; }
+.eb15 { background-color: #FFFFFF; }
+.ef16 { color: #000000; } .eb16 { background-color: #000000; }
+.ef17 { color: #00005f; } .eb17 { background-color: #00005f; }
+.ef18 { color: #000087; } .eb18 { background-color: #000087; }
+.ef19 { color: #0000af; } .eb19 { background-color: #0000af; }
+.ef20 { color: #0000d7; } .eb20 { background-color: #0000d7; }
+.ef21 { color: #0000ff; } .eb21 { background-color: #0000ff; }
+.ef22 { color: #005f00; } .eb22 { background-color: #005f00; }
+.ef23 { color: #005f5f; } .eb23 { background-color: #005f5f; }
+.ef24 { color: #005f87; } .eb24 { background-color: #005f87; }
+.ef25 { color: #005faf; } .eb25 { background-color: #005faf; }
+.ef26 { color: #005fd7; } .eb26 { background-color: #005fd7; }
+.ef27 { color: #005fff; } .eb27 { background-color: #005fff; }
+.ef28 { color: #008700; } .eb28 { background-color: #008700; }
+.ef29 { color: #00875f; } .eb29 { background-color: #00875f; }
+.ef30 { color: #008787; } .eb30 { background-color: #008787; }
+.ef31 { color: #0087af; } .eb31 { background-color: #0087af; }
+.ef32 { color: #0087d7; } .eb32 { background-color: #0087d7; }
+.ef33 { color: #0087ff; } .eb33 { background-color: #0087ff; }
+.ef34 { color: #00af00; } .eb34 { background-color: #00af00; }
+.ef35 { color: #00af5f; } .eb35 { background-color: #00af5f; }
+.ef36 { color: #00af87; } .eb36 { background-color: #00af87; }
+.ef37 { color: #00afaf; } .eb37 { background-color: #00afaf; }
+.ef38 { color: #00afd7; } .eb38 { background-color: #00afd7; }
+.ef39 { color: #00afff; } .eb39 { background-color: #00afff; }
+.ef40 { color: #00d700; } .eb40 { background-color: #00d700; }
+.ef41 { color: #00d75f; } .eb41 { background-color: #00d75f; }
+.ef42 { color: #00d787; } .eb42 { background-color: #00d787; }
+.ef43 { color: #00d7af; } .eb43 { background-color: #00d7af; }
+.ef44 { color: #00d7d7; } .eb44 { background-color: #00d7d7; }
+.ef45 { color: #00d7ff; } .eb45 { background-color: #00d7ff; }
+.ef46 { color: #00ff00; } .eb46 { background-color: #00ff00; }
+.ef47 { color: #00ff5f; } .eb47 { background-color: #00ff5f; }
+.ef48 { color: #00ff87; } .eb48 { background-color: #00ff87; }
+.ef49 { color: #00ffaf; } .eb49 { background-color: #00ffaf; }
+.ef50 { color: #00ffd7; } .eb50 { background-color: #00ffd7; }
+.ef51 { color: #00ffff; } .eb51 { background-color: #00ffff; }
+.ef52 { color: #5f0000; } .eb52 { background-color: #5f0000; }
+.ef53 { color: #5f005f; } .eb53 { background-color: #5f005f; }
+.ef54 { color: #5f0087; } .eb54 { background-color: #5f0087; }
+.ef55 { color: #5f00af; } .eb55 { background-color: #5f00af; }
+.ef56 { color: #5f00d7; } .eb56 { background-color: #5f00d7; }
+.ef57 { color: #5f00ff; } .eb57 { background-color: #5f00ff; }
+.ef58 { color: #5f5f00; } .eb58 { background-color: #5f5f00; }
+.ef59 { color: #5f5f5f; } .eb59 { background-color: #5f5f5f; }
+.ef60 { color: #5f5f87; } .eb60 { background-color: #5f5f87; }
+.ef61 { color: #5f5faf; } .eb61 { background-color: #5f5faf; }
+.ef62 { color: #5f5fd7; } .eb62 { background-color: #5f5fd7; }
+.ef63 { color: #5f5fff; } .eb63 { background-color: #5f5fff; }
+.ef64 { color: #5f8700; } .eb64 { background-color: #5f8700; }
+.ef65 { color: #5f875f; } .eb65 { background-color: #5f875f; }
+.ef66 { color: #5f8787; } .eb66 { background-color: #5f8787; }
+.ef67 { color: #5f87af; } .eb67 { background-color: #5f87af; }
+.ef68 { color: #5f87d7; } .eb68 { background-color: #5f87d7; }
+.ef69 { color: #5f87ff; } .eb69 { background-color: #5f87ff; }
+.ef70 { color: #5faf00; } .eb70 { background-color: #5faf00; }
+.ef71 { color: #5faf5f; } .eb71 { background-color: #5faf5f; }
+.ef72 { color: #5faf87; } .eb72 { background-color: #5faf87; }
+.ef73 { color: #5fafaf; } .eb73 { background-color: #5fafaf; }
+.ef74 { color: #5fafd7; } .eb74 { background-color: #5fafd7; }
+.ef75 { color: #5fafff; } .eb75 { background-color: #5fafff; }
+.ef76 { color: #5fd700; } .eb76 { background-color: #5fd700; }
+.ef77 { color: #5fd75f; } .eb77 { background-color: #5fd75f; }
+.ef78 { color: #5fd787; } .eb78 { background-color: #5fd787; }
+.ef79 { color: #5fd7af; } .eb79 { background-color: #5fd7af; }
+.ef80 { color: #5fd7d7; } .eb80 { background-color: #5fd7d7; }
+.ef81 { color: #5fd7ff; } .eb81 { background-color: #5fd7ff; }
+.ef82 { color: #5fff00; } .eb82 { background-color: #5fff00; }
+.ef83 { color: #5fff5f; } .eb83 { background-color: #5fff5f; }
+.ef84 { color: #5fff87; } .eb84 { background-color: #5fff87; }
+.ef85 { color: #5fffaf; } .eb85 { background-color: #5fffaf; }
+.ef86 { color: #5fffd7; } .eb86 { background-color: #5fffd7; }
+.ef87 { color: #5fffff; } .eb87 { background-color: #5fffff; }
+.ef88 { color: #870000; } .eb88 { background-color: #870000; }
+.ef89 { color: #87005f; } .eb89 { background-color: #87005f; }
+.ef90 { color: #870087; } .eb90 { background-color: #870087; }
+.ef91 { color: #8700af; } .eb91 { background-color: #8700af; }
+.ef92 { color: #8700d7; } .eb92 { background-color: #8700d7; }
+.ef93 { color: #8700ff; } .eb93 { background-color: #8700ff; }
+.ef94 { color: #875f00; } .eb94 { background-color: #875f00; }
+.ef95 { color: #875f5f; } .eb95 { background-color: #875f5f; }
+.ef96 { color: #875f87; } .eb96 { background-color: #875f87; }
+.ef97 { color: #875faf; } .eb97 { background-color: #875faf; }
+.ef98 { color: #875fd7; } .eb98 { background-color: #875fd7; }
+.ef99 { color: #875fff; } .eb99 { background-color: #875fff; }
+.ef100 { color: #878700; } .eb100 { background-color: #878700; }
+.ef101 { color: #87875f; } .eb101 { background-color: #87875f; }
+.ef102 { color: #878787; } .eb102 { background-color: #878787; }
+.ef103 { color: #8787af; } .eb103 { background-color: #8787af; }
+.ef104 { color: #8787d7; } .eb104 { background-color: #8787d7; }
+.ef105 { color: #8787ff; } .eb105 { background-color: #8787ff; }
+.ef106 { color: #87af00; } .eb106 { background-color: #87af00; }
+.ef107 { color: #87af5f; } .eb107 { background-color: #87af5f; }
+.ef108 { color: #87af87; } .eb108 { background-color: #87af87; }
+.ef109 { color: #87afaf; } .eb109 { background-color: #87afaf; }
+.ef110 { color: #87afd7; } .eb110 { background-color: #87afd7; }
+.ef111 { color: #87afff; } .eb111 { background-color: #87afff; }
+.ef112 { color: #87d700; } .eb112 { background-color: #87d700; }
+.ef113 { color: #87d75f; } .eb113 { background-color: #87d75f; }
+.ef114 { color: #87d787; } .eb114 { background-color: #87d787; }
+.ef115 { color: #87d7af; } .eb115 { background-color: #87d7af; }
+.ef116 { color: #87d7d7; } .eb116 { background-color: #87d7d7; }
+.ef117 { color: #87d7ff; } .eb117 { background-color: #87d7ff; }
+.ef118 { color: #87ff00; } .eb118 { background-color: #87ff00; }
+.ef119 { color: #87ff5f; } .eb119 { background-color: #87ff5f; }
+.ef120 { color: #87ff87; } .eb120 { background-color: #87ff87; }
+.ef121 { color: #87ffaf; } .eb121 { background-color: #87ffaf; }
+.ef122 { color: #87ffd7; } .eb122 { background-color: #87ffd7; }
+.ef123 { color: #87ffff; } .eb123 { background-color: #87ffff; }
+.ef124 { color: #af0000; } .eb124 { background-color: #af0000; }
+.ef125 { color: #af005f; } .eb125 { background-color: #af005f; }
+.ef126 { color: #af0087; } .eb126 { background-color: #af0087; }
+.ef127 { color: #af00af; } .eb127 { background-color: #af00af; }
+.ef128 { color: #af00d7; } .eb128 { background-color: #af00d7; }
+.ef129 { color: #af00ff; } .eb129 { background-color: #af00ff; }
+.ef130 { color: #af5f00; } .eb130 { background-color: #af5f00; }
+.ef131 { color: #af5f5f; } .eb131 { background-color: #af5f5f; }
+.ef132 { color: #af5f87; } .eb132 { background-color: #af5f87; }
+.ef133 { color: #af5faf; } .eb133 { background-color: #af5faf; }
+.ef134 { color: #af5fd7; } .eb134 { background-color: #af5fd7; }
+.ef135 { color: #af5fff; } .eb135 { background-color: #af5fff; }
+.ef136 { color: #af8700; } .eb136 { background-color: #af8700; }
+.ef137 { color: #af875f; } .eb137 { background-color: #af875f; }
+.ef138 { color: #af8787; } .eb138 { background-color: #af8787; }
+.ef139 { color: #af87af; } .eb139 { background-color: #af87af; }
+.ef140 { color: #af87d7; } .eb140 { background-color: #af87d7; }
+.ef141 { color: #af87ff; } .eb141 { background-color: #af87ff; }
+.ef142 { color: #afaf00; } .eb142 { background-color: #afaf00; }
+.ef143 { color: #afaf5f; } .eb143 { background-color: #afaf5f; }
+.ef144 { color: #afaf87; } .eb144 { background-color: #afaf87; }
+.ef145 { color: #afafaf; } .eb145 { background-color: #afafaf; }
+.ef146 { color: #afafd7; } .eb146 { background-color: #afafd7; }
+.ef147 { color: #afafff; } .eb147 { background-color: #afafff; }
+.ef148 { color: #afd700; } .eb148 { background-color: #afd700; }
+.ef149 { color: #afd75f; } .eb149 { background-color: #afd75f; }
+.ef150 { color: #afd787; } .eb150 { background-color: #afd787; }
+.ef151 { color: #afd7af; } .eb151 { background-color: #afd7af; }
+.ef152 { color: #afd7d7; } .eb152 { background-color: #afd7d7; }
+.ef153 { color: #afd7ff; } .eb153 { background-color: #afd7ff; }
+.ef154 { color: #afff00; } .eb154 { background-color: #afff00; }
+.ef155 { color: #afff5f; } .eb155 { background-color: #afff5f; }
+.ef156 { color: #afff87; } .eb156 { background-color: #afff87; }
+.ef157 { color: #afffaf; } .eb157 { background-color: #afffaf; }
+.ef158 { color: #afffd7; } .eb158 { background-color: #afffd7; }
+.ef159 { color: #afffff; } .eb159 { background-color: #afffff; }
+.ef160 { color: #d70000; } .eb160 { background-color: #d70000; }
+.ef161 { color: #d7005f; } .eb161 { background-color: #d7005f; }
+.ef162 { color: #d70087; } .eb162 { background-color: #d70087; }
+.ef163 { color: #d700af; } .eb163 { background-color: #d700af; }
+.ef164 { color: #d700d7; } .eb164 { background-color: #d700d7; }
+.ef165 { color: #d700ff; } .eb165 { background-color: #d700ff; }
+.ef166 { color: #d75f00; } .eb166 { background-color: #d75f00; }
+.ef167 { color: #d75f5f; } .eb167 { background-color: #d75f5f; }
+.ef168 { color: #d75f87; } .eb168 { background-color: #d75f87; }
+.ef169 { color: #d75faf; } .eb169 { background-color: #d75faf; }
+.ef170 { color: #d75fd7; } .eb170 { background-color: #d75fd7; }
+.ef171 { color: #d75fff; } .eb171 { background-color: #d75fff; }
+.ef172 { color: #d78700; } .eb172 { background-color: #d78700; }
+.ef173 { color: #d7875f; } .eb173 { background-color: #d7875f; }
+.ef174 { color: #d78787; } .eb174 { background-color: #d78787; }
+.ef175 { color: #d787af; } .eb175 { background-color: #d787af; }
+.ef176 { color: #d787d7; } .eb176 { background-color: #d787d7; }
+.ef177 { color: #d787ff; } .eb177 { background-color: #d787ff; }
+.ef178 { color: #d7af00; } .eb178 { background-color: #d7af00; }
+.ef179 { color: #d7af5f; } .eb179 { background-color: #d7af5f; }
+.ef180 { color: #d7af87; } .eb180 { background-color: #d7af87; }
+.ef181 { color: #d7afaf; } .eb181 { background-color: #d7afaf; }
+.ef182 { color: #d7afd7; } .eb182 { background-color: #d7afd7; }
+.ef183 { color: #d7afff; } .eb183 { background-color: #d7afff; }
+.ef184 { color: #d7d700; } .eb184 { background-color: #d7d700; }
+.ef185 { color: #d7d75f; } .eb185 { background-color: #d7d75f; }
+.ef186 { color: #d7d787; } .eb186 { background-color: #d7d787; }
+.ef187 { color: #d7d7af; } .eb187 { background-color: #d7d7af; }
+.ef188 { color: #d7d7d7; } .eb188 { background-color: #d7d7d7; }
+.ef189 { color: #d7d7ff; } .eb189 { background-color: #d7d7ff; }
+.ef190 { color: #d7ff00; } .eb190 { background-color: #d7ff00; }
+.ef191 { color: #d7ff5f; } .eb191 { background-color: #d7ff5f; }
+.ef192 { color: #d7ff87; } .eb192 { background-color: #d7ff87; }
+.ef193 { color: #d7ffaf; } .eb193 { background-color: #d7ffaf; }
+.ef194 { color: #d7ffd7; } .eb194 { background-color: #d7ffd7; }
+.ef195 { color: #d7ffff; } .eb195 { background-color: #d7ffff; }
+.ef196 { color: #ff0000; } .eb196 { background-color: #ff0000; }
+.ef197 { color: #ff005f; } .eb197 { background-color: #ff005f; }
+.ef198 { color: #ff0087; } .eb198 { background-color: #ff0087; }
+.ef199 { color: #ff00af; } .eb199 { background-color: #ff00af; }
+.ef200 { color: #ff00d7; } .eb200 { background-color: #ff00d7; }
+.ef201 { color: #ff00ff; } .eb201 { background-color: #ff00ff; }
+.ef202 { color: #ff5f00; } .eb202 { background-color: #ff5f00; }
+.ef203 { color: #ff5f5f; } .eb203 { background-color: #ff5f5f; }
+.ef204 { color: #ff5f87; } .eb204 { background-color: #ff5f87; }
+.ef205 { color: #ff5faf; } .eb205 { background-color: #ff5faf; }
+.ef206 { color: #ff5fd7; } .eb206 { background-color: #ff5fd7; }
+.ef207 { color: #ff5fff; } .eb207 { background-color: #ff5fff; }
+.ef208 { color: #ff8700; } .eb208 { background-color: #ff8700; }
+.ef209 { color: #ff875f; } .eb209 { background-color: #ff875f; }
+.ef210 { color: #ff8787; } .eb210 { background-color: #ff8787; }
+.ef211 { color: #ff87af; } .eb211 { background-color: #ff87af; }
+.ef212 { color: #ff87d7; } .eb212 { background-color: #ff87d7; }
+.ef213 { color: #ff87ff; } .eb213 { background-color: #ff87ff; }
+.ef214 { color: #ffaf00; } .eb214 { background-color: #ffaf00; }
+.ef215 { color: #ffaf5f; } .eb215 { background-color: #ffaf5f; }
+.ef216 { color: #ffaf87; } .eb216 { background-color: #ffaf87; }
+.ef217 { color: #ffafaf; } .eb217 { background-color: #ffafaf; }
+.ef218 { color: #ffafd7; } .eb218 { background-color: #ffafd7; }
+.ef219 { color: #ffafff; } .eb219 { background-color: #ffafff; }
+.ef220 { color: #ffd700; } .eb220 { background-color: #ffd700; }
+.ef221 { color: #ffd75f; } .eb221 { background-color: #ffd75f; }
+.ef222 { color: #ffd787; } .eb222 { background-color: #ffd787; }
+.ef223 { color: #ffd7af; } .eb223 { background-color: #ffd7af; }
+.ef224 { color: #ffd7d7; } .eb224 { background-color: #ffd7d7; }
+.ef225 { color: #ffd7ff; } .eb225 { background-color: #ffd7ff; }
+.ef226 { color: #ffff00; } .eb226 { background-color: #ffff00; }
+.ef227 { color: #ffff5f; } .eb227 { background-color: #ffff5f; }
+.ef228 { color: #ffff87; } .eb228 { background-color: #ffff87; }
+.ef229 { color: #ffffaf; } .eb229 { background-color: #ffffaf; }
+.ef230 { color: #ffffd7; } .eb230 { background-color: #ffffd7; }
+.ef231 { color: #ffffff; } .eb231 { background-color: #ffffff; }
+.ef232 { color: #080808; } .eb232 { background-color: #080808; }
+.ef233 { color: #121212; } .eb233 { background-color: #121212; }
+.ef234 { color: #1c1c1c; } .eb234 { background-color: #1c1c1c; }
+.ef235 { color: #262626; } .eb235 { background-color: #262626; }
+.ef236 { color: #303030; } .eb236 { background-color: #303030; }
+.ef237 { color: #3a3a3a; } .eb237 { background-color: #3a3a3a; }
+.ef238 { color: #444444; } .eb238 { background-color: #444444; }
+.ef239 { color: #4e4e4e; } .eb239 { background-color: #4e4e4e; }
+.ef240 { color: #585858; } .eb240 { background-color: #585858; }
+.ef241 { color: #626262; } .eb241 { background-color: #626262; }
+.ef242 { color: #6c6c6c; } .eb242 { background-color: #6c6c6c; }
+.ef243 { color: #767676; } .eb243 { background-color: #767676; }
+.ef244 { color: #808080; } .eb244 { background-color: #808080; }
+.ef245 { color: #8a8a8a; } .eb245 { background-color: #8a8a8a; }
+.ef246 { color: #949494; } .eb246 { background-color: #949494; }
+.ef247 { color: #9e9e9e; } .eb247 { background-color: #9e9e9e; }
+.ef248 { color: #a8a8a8; } .eb248 { background-color: #a8a8a8; }
+.ef249 { color: #b2b2b2; } .eb249 { background-color: #b2b2b2; }
+.ef250 { color: #bcbcbc; } .eb250 { background-color: #bcbcbc; }
+.ef251 { color: #c6c6c6; } .eb251 { background-color: #c6c6c6; }
+.ef252 { color: #d0d0d0; } .eb252 { background-color: #d0d0d0; }
+.ef253 { color: #dadada; } .eb253 { background-color: #dadada; }
+.ef254 { color: #e4e4e4; } .eb254 { background-color: #e4e4e4; }
+.ef255 { color: #eeeeee; } .eb255 { background-color: #eeeeee; }
+
+.f9 { color: #000000; }
+.b9 { background-color: #FFFFFF; }
+.f9 > .bold,.bold > .f9, body.f9 > pre > .bold {
+  /* Bold is heavy black on white, or bright white
+     depending on the default background */
+  color: #000000;
+  font-weight: bold;
+}
+.reverse {
+  /* CSS does not support swapping fg and bg colours unfortunately,
+     so just hardcode something that will look OK on all backgrounds. */
+  color: #000000; background-color: #AAAAAA;
+}
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.blink { text-decoration: blink; }
+
+/* Avoid pixels between adjacent span elements.
+   Note this only works for lines less than 80 chars
+   where we close span elements on the same line.
+span { display: inline-block; }
+*/
+</style>
+</head>
+
+<body class="f9 b9">
+<pre>
+<span class="f3">commit 160604b18c170c24937939ec300bbe8307cacccb</span>
+Author:     MoserMichael &lt;mosermichael@gmail.com&gt;
+AuthorDate: Thu Nov 20 07:10:43 2025 +0200
+Commit:     MoserMichael &lt;mosermichael@gmail.com&gt;
+CommitDate: Thu Nov 20 07:10:43 2025 +0200
+
+    add ansi2html.sh
+
+:000000 100644 0000000 c2ec4e2 A	ansi2html.sh
+
+<span class="bold">diff --git a/ansi2html.sh b/ansi2html.sh</span>
+<span class="bold">new file mode 100644</span>
+<span class="bold">index 0000000..c2ec4e2</span>
+<span class="bold">--- /dev/null</span>
+<span class="bold">+++ b/ansi2html.sh</span>
+<span class="f6">@@ -0,0 +1,527 @@</span>
+<span class="f2">+#!/bin/sh</span>
+<span class="f2">+</span>
+<span class="f2">+# Convert ANSI (terminal) colours and attributes to HTML</span>
+<span class="f2">+</span>
+<span class="f2">+# Licence: LGPLv2</span>
+<span class="f2">+# Author:</span>
+<span class="f2">+#    http://www.pixelbeat.org/docs/terminal_colours/</span>
+<span class="f2">+# Examples:</span>
+<span class="f2">+#    ls -l --color=always | ansi2html.sh &gt; ls.html</span>
+<span class="f2">+#    git show --color | ansi2html.sh &gt; last_change.html</span>
+<span class="f2">+#    Generally one can use the `script` util to capture full terminal output.</span>
+<span class="f2">+# Changes:</span>
+<span class="f2">+#    V0.1, 24 Apr 2008, Initial release</span>
+<span class="f2">+#    V0.2, 01 Jan 2009, Phil Harnish &lt;philharnish@gmail.com&gt;</span>
+<span class="f2">+#                         Support `git diff --color` output by</span>
+<span class="f2">+#                         matching ANSI codes that specify only</span>
+<span class="f2">+#                         bold or background colour.</span>
+<span class="f2">+#                       P@draigBrady.com</span>
+<span class="f2">+#                         Support `ls --color` output by stripping</span>
+<span class="f2">+#                         redundant leading 0s from ANSI codes.</span>
+<span class="f2">+#                         Support `grep --color=always` by stripping</span>
+<span class="f2">+#                         unhandled ANSI codes (specifically ^[[K).</span>
+<span class="f2">+#    V0.3, 20 Mar 2009, http://eexpress.blog.ubuntu.org.cn/</span>
+<span class="f2">+#                         Remove cat -v usage which mangled non ascii input.</span>
+<span class="f2">+#                         Cleanup regular expressions used.</span>
+<span class="f2">+#                         Support other attributes like reverse, ...</span>
+<span class="f2">+#                       P@draigBrady.com</span>
+<span class="f2">+#                         Correctly nest &lt;span&gt; tags (even across lines).</span>
+<span class="f2">+#                         Add a command line option to use a dark background.</span>
+<span class="f2">+#                         Strip more terminal control codes.</span>
+<span class="f2">+#    V0.4, 17 Sep 2009, P@draigBrady.com</span>
+<span class="f2">+#                         Handle codes with combined attributes and color.</span>
+<span class="f2">+#                         Handle isolated &lt;bold&gt; attributes with css.</span>
+<span class="f2">+#                         Strip more terminal control codes.</span>
+<span class="f2">+#    V0.26, 16 Nov 2019</span>
+<span class="f2">+#      http://github.com/pixelb/scripts/commits/master/scripts/ansi2html.sh</span>
+<span class="f2">+</span>
+<span class="f2">+gawk --version &gt;/dev/null || exit 1</span>
+<span class="f2">+</span>
+<span class="f2">+if [ &quot;$1&quot; = &quot;--version&quot; ]; then</span>
+<span class="f2">+    printf '0.26\n' &amp;&amp; exit</span>
+<span class="f2">+fi</span>
+<span class="f2">+</span>
+<span class="f2">+usage()</span>
+<span class="f2">+{</span>
+<span class="f2">+printf '%s\n' \</span>
+<span class="f2">+'This utility converts ANSI codes in data passed to stdin</span>
+<span class="f2">+It has 4 optional parameters:</span>
+<span class="f2">+--bg=dark --palette=linux|solarized|tango|xterm --css-only|--body-only</span>
+<span class="f2">+E.g.: ls -l --color=always | ansi2html.sh --bg=dark &gt; ls.html' &gt;&amp;2</span>
+<span class="f2">+    exit</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+if [ &quot;$1&quot; = &quot;--help&quot; ]; then</span>
+<span class="f2">+    usage</span>
+<span class="f2">+fi</span>
+<span class="f2">+</span>
+<span class="f2">+processArg()</span>
+<span class="f2">+{</span>
+<span class="f2">+    [ &quot;$1&quot; = &quot;--bg=dark&quot; ] &amp;&amp; { dark_bg=yes; return; }</span>
+<span class="f2">+    [ &quot;$1&quot; = &quot;--css-only&quot; ] &amp;&amp; { css_only=yes; return; }</span>
+<span class="f2">+    [ &quot;$1&quot; = &quot;--body-only&quot; ] &amp;&amp; { body_only=yes; return; }</span>
+<span class="f2">+    if [ &quot;$1&quot; = &quot;--palette=solarized&quot; ]; then</span>
+<span class="f2">+       # See http://ethanschoonover.com/solarized</span>
+<span class="f2">+       P0=073642;  P1=D30102;  P2=859900;  P3=B58900;</span>
+<span class="f2">+       P4=268BD2;  P5=D33682;  P6=2AA198;  P7=EEE8D5;</span>
+<span class="f2">+       P8=002B36;  P9=CB4B16; P10=586E75; P11=657B83;</span>
+<span class="f2">+      P12=839496; P13=6C71C4; P14=93A1A1; P15=FDF6E3;</span>
+<span class="f2">+      return;</span>
+<span class="f2">+    elif [ &quot;$1&quot; = &quot;--palette=solarized-xterm&quot; ]; then</span>
+<span class="f2">+       # Above mapped onto the xterm 256 color palette</span>
+<span class="f2">+       P0=262626;  P1=AF0000;  P2=5F8700;  P3=AF8700;</span>
+<span class="f2">+       P4=0087FF;  P5=AF005F;  P6=00AFAF;  P7=E4E4E4;</span>
+<span class="f2">+       P8=1C1C1C;  P9=D75F00; P10=585858; P11=626262;</span>
+<span class="f2">+      P12=808080; P13=5F5FAF; P14=8A8A8A; P15=FFFFD7;</span>
+<span class="f2">+      return;</span>
+<span class="f2">+    elif [ &quot;$1&quot; = &quot;--palette=tango&quot; ]; then</span>
+<span class="f2">+       # Gnome default</span>
+<span class="f2">+       P0=000000;  P1=CC0000;  P2=4E9A06;  P3=C4A000;</span>
+<span class="f2">+       P4=3465A4;  P5=75507B;  P6=06989A;  P7=D3D7CF;</span>
+<span class="f2">+       P8=555753;  P9=EF2929; P10=8AE234; P11=FCE94F;</span>
+<span class="f2">+      P12=729FCF; P13=AD7FA8; P14=34E2E2; P15=EEEEEC;</span>
+<span class="f2">+      return;</span>
+<span class="f2">+    elif [ &quot;$1&quot; = &quot;--palette=xterm&quot; ]; then</span>
+<span class="f2">+       P0=000000;  P1=CD0000;  P2=00CD00;  P3=CDCD00;</span>
+<span class="f2">+       P4=0000EE;  P5=CD00CD;  P6=00CDCD;  P7=E5E5E5;</span>
+<span class="f2">+       P8=7F7F7F;  P9=FF0000; P10=00FF00; P11=FFFF00;</span>
+<span class="f2">+      P12=5C5CFF; P13=FF00FF; P14=00FFFF; P15=FFFFFF;</span>
+<span class="f2">+      return;</span>
+<span class="f2">+    else # linux console</span>
+<span class="f2">+       P0=000000;  P1=AA0000;  P2=00AA00;  P3=AA5500;</span>
+<span class="f2">+       P4=0000AA;  P5=AA00AA;  P6=00AAAA;  P7=AAAAAA;</span>
+<span class="f2">+       P8=555555;  P9=FF5555; P10=55FF55; P11=FFFF55;</span>
+<span class="f2">+      P12=5555FF; P13=FF55FF; P14=55FFFF; P15=FFFFFF;</span>
+<span class="f2">+      [ &quot;$1&quot; = &quot;--palette=linux&quot; ] &amp;&amp; return;</span>
+<span class="f2">+    fi</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+processArg #defaults</span>
+<span class="f2">+for var in &quot;$@&quot;; do processArg $var; done</span>
+<span class="f2">+[ &quot;$css_only&quot; ] &amp;&amp; [ &quot;$body_only&quot; ] &amp;&amp; usage</span>
+<span class="f2">+</span>
+<span class="f2">+# Mac OSX's GNU sed is installed as gsed</span>
+<span class="f2">+# use e.g. homebrew 'gnu-sed' to get it</span>
+<span class="f2">+if ! sed --version &gt;/dev/null 2&gt;&amp;1; then</span>
+<span class="f2">+  if gsed --version &gt;/dev/null 2&gt;&amp;1; then</span>
+<span class="f2">+    alias sed=gsed</span>
+<span class="f2">+  else</span>
+<span class="f2">+    echo &quot;Error, can't find an acceptable GNU sed.&quot; &gt;&amp;2</span>
+<span class="f2">+    exit 1</span>
+<span class="f2">+  fi</span>
+<span class="f2">+fi</span>
+<span class="f2">+</span>
+<span class="f2">+[ &quot;$css_only&quot; ] || [ &quot;$body_only&quot; ] || printf '%s' &quot;&lt;html&gt;</span>
+<span class="f2">+&lt;head&gt;</span>
+<span class="f2">+&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html; charset=utf-8\&quot;/&gt;</span>
+<span class="f2">+&lt;style type=\&quot;text/css\&quot;&gt;</span>
+<span class="f2">+pre { white-space: pre-wrap; }</span>
+<span class="f2">+&quot;</span>
+<span class="f2">+[ &quot;$body_only&quot; ] || printf &quot;.ef0,.f0 { color: #$P0; } .eb0,.b0 { background-color: #$P0; }
++.ef1,.f1 { color: #$P1; } .eb1,.b1 { background-color: #$P1; }</span>
+<span class="f2">+.ef2,.f2 { color: #$P2; } .eb2,.b2 { background-color: #$P2; }</span>
+<span class="f2">+.ef3,.f3 { color: #$P3; } .eb3,.b3 { background-color: #$P3; }</span>
+<span class="f2">+.ef4,.f4 { color: #$P4; } .eb4,.b4 { background-color: #$P4; }</span>
+<span class="f2">+.ef5,.f5 { color: #$P5; } .eb5,.b5 { background-color: #$P5; }</span>
+<span class="f2">+.ef6,.f6 { color: #$P6; } .eb6,.b6 { background-color: #$P6; }</span>
+<span class="f2">+.ef7,.f7 { color: #$P7; } .eb7,.b7 { background-color: #$P7; }</span>
+<span class="f2">+.ef8, .f0 &gt; .bold,.bold &gt; .f0 { color: #$P8; font-weight: normal; }</span>
+<span class="f2">+.ef9, .f1 &gt; .bold,.bold &gt; .f1 { color: #$P9; font-weight: normal; }</span>
+<span class="f2">+.ef10,.f2 &gt; .bold,.bold &gt; .f2 { color: #$P10; font-weight: normal; }</span>
+<span class="f2">+.ef11,.f3 &gt; .bold,.bold &gt; .f3 { color: #$P11; font-weight: normal; }</span>
+<span class="f2">+.ef12,.f4 &gt; .bold,.bold &gt; .f4 { color: #$P12; font-weight: normal; }</span>
+<span class="f2">+.ef13,.f5 &gt; .bold,.bold &gt; .f5 { color: #$P13; font-weight: normal; }</span>
+<span class="f2">+.ef14,.f6 &gt; .bold,.bold &gt; .f6 { color: #$P14; font-weight: normal; }</span>
+<span class="f2">+.ef15,.f7 &gt; .bold,.bold &gt; .f7 { color: #$P15; font-weight: normal; }</span>
+<span class="f2">+.eb8  { background-color: #$P8; }</span>
+<span class="f2">+.eb9  { background-color: #$P9; }</span>
+<span class="f2">+.eb10 { background-color: #$P10; }</span>
+<span class="f2">+.eb11 { background-color: #$P11; }</span>
+<span class="f2">+.eb12 { background-color: #$P12; }</span>
+<span class="f2">+.eb13 { background-color: #$P13; }</span>
+<span class="f2">+.eb14 { background-color: #$P14; }</span>
+<span class="f2">+.eb15 { background-color: #$P15; }</span>
+<span class="f2">+&quot;</span>
+<span class="f2">+# The default xterm 256 colour palette</span>
+<span class="f2">+for red in 0 1 2 3 4 5 ; do</span>
+<span class="f2">+  for green in 0 1 2 3 4 5 ; do</span>
+<span class="f2">+    for blue in 0 1 2 3 4 5 ; do</span>
+<span class="f2">+      c=$((16 + ($red * 36) + ($green * 6) + $blue))</span>
+<span class="f2">+      r=$((($red * 40 + 55) * ($red &gt; 0)))</span>
+<span class="f2">+      g=$((($green * 40 + 55) * ($green &gt; 0)))</span>
+<span class="f2">+      b=$((($blue * 40 + 55) * ($blue &gt; 0)))</span>
+<span class="f2">+      [ &quot;$body_only&quot; ] || printf &quot;.ef%d { color: #%2.2x%2.2x%2.2x; } &quot; $c $r $g $b</span>
+<span class="f2">+      [ &quot;$body_only&quot; ] || printf &quot;.eb%d { background-color: #%2.2x%2.2x%2.2x; }\n&quot; $c $r $g $b
++    done</span>
+<span class="f2">+  done</span>
+<span class="f2">+done</span>
+<span class="f2">+for gray in $(seq 0 23); do</span>
+<span class="f2">+  c=$(($gray+232))</span>
+<span class="f2">+  l=$(($gray*10 + 8))</span>
+<span class="f2">+  [ &quot;$body_only&quot; ] || printf &quot;.ef%d { color: #%2.2x%2.2x%2.2x; } &quot; $c $l $l $l</span>
+<span class="f2">+  [ &quot;$body_only&quot; ] || printf &quot;.eb%d { background-color: #%2.2x%2.2x%2.2x; }\n&quot; $c $l $l $l</span>
+<span class="f2">+done</span>
+<span class="f2">+</span>
+<span class="f2">+[ &quot;$body_only&quot; ] || printf '%s' '</span>
+<span class="f2">+.f9 { color: '`[ &quot;$dark_bg&quot; ] &amp;&amp; printf &quot;#$P7;&quot; || printf &quot;#$P0;&quot;`' }</span>
+<span class="f2">+.b9 { background-color: #'`[ &quot;$dark_bg&quot; ] &amp;&amp; printf $P0 || printf $P15`'; }</span>
+<span class="f2">+.f9 &gt; .bold,.bold &gt; .f9, body.f9 &gt; pre &gt; .bold {</span>
+<span class="f2">+  /* Bold is heavy black on white, or bright white</span>
+<span class="f2">+     depending on the default background */</span>
+<span class="f2">+  color: '`[ &quot;$dark_bg&quot; ] &amp;&amp; printf &quot;#$P15;&quot; || printf &quot;#$P0;&quot;`'</span>
+<span class="f2">+  font-weight: '`[ &quot;$dark_bg&quot; ] &amp;&amp; printf 'normal;' || printf 'bold;'`'</span>
+<span class="f2">+}</span>
+<span class="f2">+.reverse {</span>
+<span class="f2">+  /* CSS does not support swapping fg and bg colours unfortunately,</span>
+<span class="f2">+     so just hardcode something that will look OK on all backgrounds. */</span>
+<span class="f2">+  '&quot;color: #$P0; background-color: #$P7;&quot;'</span>
+<span class="f2">+}</span>
+<span class="f2">+.underline { text-decoration: underline; }</span>
+<span class="f2">+.line-through { text-decoration: line-through; }</span>
+<span class="f2">+.blink { text-decoration: blink; }</span>
+<span class="f2">+</span>
+<span class="f2">+/* Avoid pixels between adjacent span elements.</span>
+<span class="f2">+   Note this only works for lines less than 80 chars</span>
+<span class="f2">+   where we close span elements on the same line.</span>
+<span class="f2">+span { display: inline-block; }</span>
+<span class="f2">+*/</span>
+<span class="f2">+'</span>
+<span class="f2">+[ &quot;$body_only&quot; ] || [ &quot;$css_only&quot; ] &amp;&amp; printf '%s\n' \</span>
+<span class="f2">+'To use the css generated from --css-only, do: '\</span>
+<span class="f2">+'&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;&lt;/head&gt;' &gt;&amp;2</span>
+<span class="f2">+[ &quot;$css_only&quot; ] &amp;&amp; exit</span>
+<span class="f2">+[ &quot;$body_only&quot; ] || printf '%s' '&lt;/style&gt;</span>
+<span class="f2">+&lt;/head&gt;</span>
+<span class="f2">+</span>
+<span class="f2">+&lt;body class=&quot;f9 b9&quot;&gt;</span>
+<span class="f2">+&lt;pre&gt;</span>
+<span class="f2">+'</span>
+<span class="f2">+[ &quot;$body_only&quot; ] &amp;&amp; printf '%s\n' 'Be sure to use &lt;body class=&quot;f9 b9&quot;&gt; and &lt;pre&gt;' &gt;&amp;2</span>
+<span class="f2">+</span>
+<span class="f2">+p='\x1b\['        #shortcut to match escape codes</span>
+<span class="f2">+</span>
+<span class="f2">+# Handle various xterm control sequences.</span>
+<span class="f2">+# See /usr/share/doc/xterm-*/ctlseqs.txt</span>
+<span class="f2">+sed &quot;</span>
+<span class="f2">+# escape ampersand and quote</span>
+<span class="f2">+s#&amp;#\&amp;amp;#g; s#\&quot;#\&amp;quot;#g;</span>
+<span class="f2">+s#\x1b[^\x1b]*\x1b\\\##g  # strip anything between \e and ST</span>
+<span class="f2">+s#\x1b][0-9]*;[^\a]*\a##g # strip any OSC (xterm title etc.)</span>
+<span class="f2">+</span>
+<span class="f2">+s#\r\$## # strip trailing \r</span>
+<span class="f2">+</span>
+<span class="f2">+# strip other non SGR escape sequences</span>
+<span class="f2">+s#[\x07]##g</span>
+<span class="f2">+s#\x1b[]&gt;=\][0-9;]*##g</span>
+<span class="f2">+s#\x1bP+.\{5\}##g</span>
+<span class="f2">+# Mark cursor positioning codes \&quot;Jr;c;</span>
+<span class="f2">+s#${p}\([0-9]\{1,2\}\)G#\&quot;J;\1;#g</span>
+<span class="f2">+s#${p}\([0-9]\{1,2\}\);\([0-9]\{1,2\}\)H#\&quot;J\1;\2;#g</span>
+<span class="f2">+</span>
+<span class="f2">+# Mark clear as \&quot;Cn where n=1 is screen and n=0 is to end-of-line</span>
+<span class="f2">+s#${p}H#\&quot;C1;#g</span>
+<span class="f2">+s#${p}K#\&quot;C0;#g</span>
+<span class="f2">+# Mark Cursor move columns as \&quot;Mn where n is +ve for right, -ve for left</span>
+<span class="f2">+s#${p}C#\&quot;M1;#g</span>
+<span class="f2">+s#${p}\([0-9]\{1,\}\)C#\&quot;M\1;#g</span>
+<span class="f2">+s#${p}\([0-9]\{1,\}\)D#\&quot;M-\1;#g</span>
+<span class="f2">+s#${p}\([0-9]\{1,\}\)P#\&quot;X\1;#g</span>
+<span class="f2">+</span>
+<span class="f2">+s#${p}[0-9;?]*[^0-9;?m]##g</span>
+<span class="f2">+</span>
+<span class="f2">+&quot; |</span>
+<span class="f2">+</span>
+<span class="f2">+# Normalize the input before transformation</span>
+<span class="f2">+sed &quot;</span>
+<span class="f2">+# escape HTML (ampersand and quote done above)</span>
+<span class="f2">+s#&gt;#\&amp;gt;#g; s#&lt;#\&amp;lt;#g;</span>
+<span class="f2">+</span>
+<span class="f2">+# handle truecolor</span>
+<span class="f2">+s#${p}38;2;\([0-9]\{1,3\}\);\([0-9]\{1,3\}\);\([0-9]\{1,3\}\)m#\</span>
+<span class="f2">+&lt;span style=\&quot;color:rgb(\1\,\2\,\3\)\&quot;&gt;#g</span>
+<span class="f2">+s#${p}48;2;\([0-9]\{1,3\}\);\([0-9]\{1,3\}\);\([0-9]\{1,3\}\)m#\</span>
+<span class="f2">+&lt;span style=\&quot;background-color:rgb(\1\,\2\,\3\)\&quot;&gt;#g</span>
+<span class="f2">+</span>
+<span class="f2">+# normalize SGR codes a little</span>
+<span class="f2">+</span>
+<span class="f2">+# split 256 colors out and mark so that they're not</span>
+<span class="f2">+# recognised by the following 'split combined' line</span>
+<span class="f2">+:e</span>
+<span class="f2">+s#${p}\([0-9;]\{1,\}\);\([34]8;5;[0-9]\{1,3\}\)m#${p}\1m${p}¬\2m#g; t e</span>
+<span class="f2">+s#${p}\([34]8;5;[0-9]\{1,3\}\)m#${p}¬\1m#g;</span>
+<span class="f2">+</span>
+<span class="f2">+:c</span>
+<span class="f2">+s#${p}\([0-9]\{1,\}\);\([0-9;]\{1,\}\)m#${p}\1m${p}\2m#g; t c   # split combined</span>
+<span class="f2">+s#${p}0\([0-7]\)#${p}\1#g                                 #strip leading 0</span>
+<span class="f2">+s#${p}1m\(\(${p}[4579]m\)*\)#\1${p}1m#g                   #bold last (with clr)</span>
+<span class="f2">+s#${p}m#${p}0m#g                                          #add leading 0 to norm</span>
+<span class="f2">+</span>
+<span class="f2">+# undo any 256 color marking</span>
+<span class="f2">+s#${p}¬\([34]8;5;[0-9]\{1,3\}\)m#${p}\1m#g;</span>
+<span class="f2">+</span>
+<span class="f2">+# map 16 color codes to color + bold</span>
+<span class="f2">+s#${p}9\([0-7]\)m#${p}3\1m${p}1m#g;</span>
+<span class="f2">+s#${p}10\([0-7]\)m#${p}4\1m${p}1m#g;</span>
+<span class="f2">+</span>
+<span class="f2">+# change 'reset' code to \&quot;R</span>
+<span class="f2">+s#${p}0m#\&quot;R;#g</span>
+<span class="f2">+&quot; |</span>
+<span class="f2">+</span>
+<span class="f2">+# Convert SGR sequences to HTML</span>
+<span class="f2">+sed &quot;</span>
+<span class="f2">+# common combinations to minimise html (optional)</span>
+<span class="f2">+:f</span>
+<span class="f2">+s#${p}3[0-7]m${p}3\([0-7]\)m#${p}3\1m#g; t f</span>
+<span class="f2">+:b</span>
+<span class="f2">+s#${p}4[0-7]m${p}4\([0-7]\)m#${p}4\1m#g; t b</span>
+<span class="f2">+s#${p}3\([0-7]\)m${p}4\([0-7]\)m#&lt;span class=\&quot;f\1 b\2\&quot;&gt;#g</span>
+<span class="f2">+s#${p}4\([0-7]\)m${p}3\([0-7]\)m#&lt;span class=\&quot;f\2 b\1\&quot;&gt;#g</span>
+<span class="f2">+</span>
+<span class="f2">+s#${p}1m#&lt;span class=\&quot;bold\&quot;&gt;#g</span>
+<span class="f2">+s#${p}4m#&lt;span class=\&quot;underline\&quot;&gt;#g</span>
+<span class="f2">+s#${p}5m#&lt;span class=\&quot;blink\&quot;&gt;#g</span>
+<span class="f2">+s#${p}7m#&lt;span class=\&quot;reverse\&quot;&gt;#g</span>
+<span class="f2">+s#${p}9m#&lt;span class=\&quot;line-through\&quot;&gt;#g</span>
+<span class="f2">+s#${p}3\([0-9]\)m#&lt;span class=\&quot;f\1\&quot;&gt;#g</span>
+<span class="f2">+s#${p}4\([0-9]\)m#&lt;span class=\&quot;b\1\&quot;&gt;#g</span>
+<span class="f2">+</span>
+<span class="f2">+s#${p}38;5;\([0-9]\{1,3\}\)m#&lt;span class=\&quot;ef\1\&quot;&gt;#g</span>
+<span class="f2">+s#${p}48;5;\([0-9]\{1,3\}\)m#&lt;span class=\&quot;eb\1\&quot;&gt;#g</span>
+<span class="f2">+</span>
+<span class="f2">+s#${p}[0-9;]*m##g # strip unhandled codes</span>
+<span class="f2">+&quot; |</span>
+<span class="f2">+</span>
+<span class="f2">+# Convert alternative character set and handle cursor movement codes</span>
+<span class="f2">+# Note we convert here, as if we do at start we have to worry about avoiding</span>
+<span class="f2">+# conversion of SGR codes etc., whereas doing here we only have to</span>
+<span class="f2">+# avoid conversions of stuff between &amp;...; or &lt;...&gt;</span>
+<span class="f2">+#</span>
+<span class="f2">+# Note we could use sed to do this based around:</span>
+<span class="f2">+#   sed 'y/abcdefghijklmnopqrstuvwxyz{}`~/▒␉␌␍␊°±␤␋┘┐┌└┼⎺⎻─⎼⎽├┤┴┬│≤≥π£◆·/'</span>
+<span class="f2">+# However that would be very awkward as we need to only conv some input.</span>
+<span class="f2">+# The basic scheme that we do in the awk script below is:</span>
+<span class="f2">+#  1. enable transliterate once &quot;T1; is seen</span>
+<span class="f2">+#  2. disable once &quot;T0; is seen (may be on diff line)</span>
+<span class="f2">+#  3. never transliterate between &amp;; or &lt;&gt; chars</span>
+<span class="f2">+#  4. track x,y movements and active display mode at each position</span>
+<span class="f2">+#  5. buffer line/screen and dump when required</span>
+<span class="f2">+sed &quot;</span>
+<span class="f2">+# change 'smacs' and 'rmacs' to \&quot;T1 and \&quot;T0 to simplify matching.</span>
+<span class="f2">+s#\x1b(0#\&quot;T1;#g;</span>
+<span class="f2">+s#\x0E#\&quot;T1;#g;</span>
+<span class="f2">+</span>
+<span class="f2">+s#\x1b(B#\&quot;T0;#g</span>
+<span class="f2">+s#\x0F#\&quot;T0;#g</span>
+<span class="f2">+&quot; |</span>
+<span class="f2">+(</span>
+<span class="f2">+gawk '</span>
+<span class="f2">+function dump_line(l,del,c,blanks,ret) {</span>
+<span class="f2">+  for(c=1;c&lt;maxX;c++) {</span>
+<span class="f2">+    if ((c SUBSEP l) in attr || alength(cur)) {</span>
+<span class="f2">+      ret = ret blanks fixas(cur,attr[c,l])</span>
+<span class="f2">+      if(del) delete attr[c,l]</span>
+<span class="f2">+      blanks=&quot;&quot;</span>
+<span class="f2">+    }</span>
+<span class="f2">+    if ((c SUBSEP l) in dump) {</span>
+<span class="f2">+      ret=ret blanks dump[c,l]</span>
+<span class="f2">+      if(del) delete dump[c,l]</span>
+<span class="f2">+      blanks=&quot;&quot;</span>
+<span class="f2">+    } else blanks=blanks &quot; &quot;</span>
+<span class="f2">+  }</span>
+<span class="f2">+  if(alength(cur)) ret=ret blanks</span>
+<span class="f2">+  return ret</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+function dump_screen(l,ret) {</span>
+<span class="f2">+  for(l=1;l&lt;=maxY;l++)</span>
+<span class="f2">+    ret=ret dump_line(l,0) &quot;\n&quot;</span>
+<span class="f2">+  return ret fixas(cur, &quot;&quot;)</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+function atos(a,i,ret) {</span>
+<span class="f2">+  for(i=1;i&lt;=alength(a);i++) if(i in a) ret=ret a[i]</span>
+<span class="f2">+  return ret</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+function alength(a, i, k) {</span>
+<span class="f2">+    k = 0</span>
+<span class="f2">+    for(i in a) k++</span>
+<span class="f2">+    return k</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+function fixas(a,s,spc,i,attr,rm,ret) {</span>
+<span class="f2">+  spc=alength(a)</span>
+<span class="f2">+  l=split(s,attr,&quot;&gt;&quot;)</span>
+<span class="f2">+  for(i=1;i&lt;=spc;i++) {</span>
+<span class="f2">+    rm=rm?rm:(a[i]!=attr[i]&quot;&gt;&quot;)</span>
+<span class="f2">+    if(rm) {</span>
+<span class="f2">+      ret=ret &quot;&lt;/span&gt;&quot;</span>
+<span class="f2">+      delete a[i];</span>
+<span class="f2">+    }</span>
+<span class="f2">+  }</span>
+<span class="f2">+  for(i=1;i&lt;l;i++) {</span>
+<span class="f2">+    attr[i]=attr[i]&quot;&gt;&quot;</span>
+<span class="f2">+    if(a[i]!=attr[i]) {</span>
+<span class="f2">+      a[i]=attr[i]</span>
+<span class="f2">+      ret = ret attr[i]</span>
+<span class="f2">+    }</span>
+<span class="f2">+  }</span>
+<span class="f2">+  return ret</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+function encode(string,start,end,i,ret,pos,sc,buf) {</span>
+<span class="f2">+   if(!end) end=length(string);</span>
+<span class="f2">+   if(!start) start=1;</span>
+<span class="f2">+   state=3</span>
+<span class="f2">+   for(i=1;i&lt;=length(string);i++) {</span>
+<span class="f2">+     c=substr(string,i,1)</span>
+<span class="f2">+     if(state==2) {</span>
+<span class="f2">+       sc=sc c</span>
+<span class="f2">+       if(c==&quot;;&quot;) {</span>
+<span class="f2">+          c=sc</span>
+<span class="f2">+          state=last_mode</span>
+<span class="f2">+       } else continue</span>
+<span class="f2">+     } else {</span>
+<span class="f2">+       if(c==&quot;\r&quot;) { x=1; continue }</span>
+<span class="f2">+       if(c==&quot;&lt;&quot;) {</span>
+<span class="f2">+         # Change attributes - store current active</span>
+<span class="f2">+         # attributes in span array</span>
+<span class="f2">+         split(substr(string,i),cord,&quot;&gt;&quot;);</span>
+<span class="f2">+         i+=length(cord[1])</span>
+<span class="f2">+         span[++spc]=cord[1] &quot;&gt;&quot;</span>
+<span class="f2">+         continue</span>
+<span class="f2">+       }</span>
+<span class="f2">+       else if(c==&quot;&amp;&quot;) {</span>
+<span class="f2">+         # All goes to single position till we see a semicolon</span>
+<span class="f2">+         sc=c</span>
+<span class="f2">+         state=2</span>
+<span class="f2">+         continue</span>
+<span class="f2">+       }</span>
+<span class="f2">+       else if(c==&quot;\b&quot;) {</span>
+<span class="f2">+          # backspace move insertion point back 1</span>
+<span class="f2">+          if(spc) attr[x,y]=atos(span)</span>
+<span class="f2">+          x=x&gt;1?x-1:1</span>
+<span class="f2">+          continue</span>
+<span class="f2">+       }</span>
+<span class="f2">+       else if(c==&quot;\&quot;&quot;) {</span>
+<span class="f2">+          split(substr(string,i+2),cord,&quot;;&quot;)</span>
+<span class="f2">+          cc=substr(string,i+1,1);</span>
+<span class="f2">+          if(cc==&quot;T&quot;) {</span>
+<span class="f2">+              # Transliterate on/off</span>
+<span class="f2">+              if(cord[1]==1&amp;&amp;state==3) last_mode=state=4</span>
+<span class="f2">+              if(cord[1]==0&amp;&amp;state==4) last_mode=state=3</span>
+<span class="f2">+          }</span>
+<span class="f2">+          else if(cc==&quot;C&quot;) {</span>
+<span class="f2">+              # Clear</span>
+<span class="f2">+              if(cord[1]+0) {</span>
+<span class="f2">+                # Screen - if Recording dump screen</span>
+<span class="f2">+                if(dumpStatus==dsActive) ret=ret dump_screen()</span>
+<span class="f2">+                dumpStatus=dsActive</span>
+<span class="f2">+                delete dump</span>
+<span class="f2">+                delete attr</span>
+<span class="f2">+                x=y=1</span>
+<span class="f2">+              } else {</span>
+<span class="f2">+                # To end of line</span>
+<span class="f2">+                for(pos=x;pos&lt;maxX;pos++) {</span>
+<span class="f2">+                  dump[pos,y]=&quot; &quot;</span>
+<span class="f2">+                  if (!spc) delete attr[pos,y]</span>
+<span class="f2">+                  else attr[pos,y]=atos(span)</span>
+<span class="f2">+                }</span>
+<span class="f2">+              }</span>
+<span class="f2">+          }</span>
+<span class="f2">+          else if(cc==&quot;J&quot;) {</span>
+<span class="f2">+              # Jump to x,y</span>
+<span class="f2">+              i+=length(cord[2])+1</span>
+<span class="f2">+              # If line is higher - dump previous screen</span>
+<span class="f2">+              if(dumpStatus==dsActive&amp;&amp;cord[1]&lt;y) {</span>
+<span class="f2">+                ret=ret dump_screen();</span>
+<span class="f2">+                dumpStatus=dsNew;</span>
+<span class="f2">+              }</span>
+<span class="f2">+              x=cord[2]</span>
+<span class="f2">+              if(length(cord[1]) &amp;&amp; y!=cord[1]){</span>
+<span class="f2">+                y=cord[1]</span>
+<span class="f2">+                if(y&gt;maxY) maxY=y</span>
+<span class="f2">+                # Change y - start recording</span>
+<span class="f2">+                dumpStatus=dumpStatus?dumpStatus:dsReset</span>
+<span class="f2">+              }</span>
+<span class="f2">+          }</span>
+<span class="f2">+          else if(cc==&quot;M&quot;) {</span>
+<span class="f2">+              # Move left/right on current line</span>
+<span class="f2">+              x+=cord[1]</span>
+<span class="f2">+          }</span>
+<span class="f2">+          else if(cc==&quot;X&quot;) {</span>
+<span class="f2">+              # delete on right</span>
+<span class="f2">+              for(pos=x;pos&lt;=maxX;pos++) {</span>
+<span class="f2">+                nx=pos+cord[1]</span>
+<span class="f2">+                if(nx&lt;maxX) {</span>
+<span class="f2">+                  if((nx SUBSEP y) in attr) attr[pos,y] = attr[nx,y]</span>
+<span class="f2">+                  else delete attr[pos,y]</span>
+<span class="f2">+                  if((nx SUBSEP y) in dump) dump[pos,y] = dump[nx,y]</span>
+<span class="f2">+                  else delete dump[pos,y]</span>
+<span class="f2">+                } else if(spc) {</span>
+<span class="f2">+                  attr[pos,y]=atos(span)</span>
+<span class="f2">+                  dump[pos,y]=&quot; &quot;</span>
+<span class="f2">+                }</span>
+<span class="f2">+              }</span>
+<span class="f2">+          }</span>
+<span class="f2">+          else if(cc==&quot;R&quot;) {</span>
+<span class="f2">+              # Reset attributes</span>
+<span class="f2">+              while(spc) delete span[spc--]</span>
+<span class="f2">+          }</span>
+<span class="f2">+          i+=length(cord[1])+2</span>
+<span class="f2">+          continue</span>
+<span class="f2">+       }</span>
+<span class="f2">+       else if(state==4&amp;&amp;i&gt;=start&amp;&amp;i&lt;=end&amp;&amp;c in Trans) c=Trans[c]</span>
+<span class="f2">+     }</span>
+<span class="f2">+     if(dumpStatus==dsReset) {</span>
+<span class="f2">+       delete dump</span>
+<span class="f2">+       delete attr</span>
+<span class="f2">+       ret=ret&quot;\n&quot;</span>
+<span class="f2">+       dumpStatus=dsActive</span>
+<span class="f2">+     }</span>
+<span class="f2">+     if(dumpStatus==dsNew) {</span>
+<span class="f2">+       # After moving/clearing we are now ready to write</span>
+<span class="f2">+       # somthing to the screen so start recording now</span>
+<span class="f2">+       ret=ret&quot;\n&quot;</span>
+<span class="f2">+       dumpStatus=dsActive</span>
+<span class="f2">+     }</span>
+<span class="f2">+     if(dumpStatus==dsActive||dumpStatus==dsOff) {</span>
+<span class="f2">+       dump[x,y] = c</span>
+<span class="f2">+       if(!spc) delete attr[x,y]</span>
+<span class="f2">+       else attr[x,y] = atos(span)</span>
+<span class="f2">+       if(++x&gt;maxX) maxX=x;</span>
+<span class="f2">+     }</span>
+<span class="f2">+    }</span>
+<span class="f2">+    # End of line if dumping increment y and set x back to first col</span>
+<span class="f2">+    x=1</span>
+<span class="f2">+    if(!dumpStatus) return ret dump_line(y,1);</span>
+<span class="f2">+    else if(++y&gt;maxY) maxY=y;</span>
+<span class="f2">+    return ret</span>
+<span class="f2">+}</span>
+<span class="f2">+BEGIN{</span>
+<span class="f2">+  OFS=FS</span>
+<span class="f2">+  # dump screen status</span>
+<span class="f2">+  dsOff=0    # Not dumping screen contents just write output direct</span>
+<span class="f2">+  dsNew=1    # Just after move/clear waiting for activity to start recording</span>
+<span class="f2">+  dsReset=2  # Screen cleared build new empty buffer and record</span>
+<span class="f2">+  dsActive=3 # Currently recording</span>
+<span class="f2">+  F=&quot;abcdefghijklmnopqrstuvwxyz{}`~&quot;</span>
+<span class="f2">+  T=&quot;▒␉␌␍␊°±␤␋┘┐┌└┼⎺⎻─⎼⎽├┤┴┬│≤≥π£◆·&quot;</span>
+<span class="f2">+  maxX=80</span>
+<span class="f2">+  delete cur;</span>
+<span class="f2">+  x=y=1</span>
+<span class="f2">+  for(i=1;i&lt;=length(F);i++)Trans[substr(F,i,1)]=substr(T,i,1);</span>
+<span class="f2">+}</span>
+<span class="f2">+</span>
+<span class="f2">+{ $0=encode($0) }</span>
+<span class="f2">+1</span>
+<span class="f2">+END {</span>
+<span class="f2">+  if(dumpStatus) {</span>
+<span class="f2">+    print dump_screen();</span>
+<span class="f2">+  }</span>
+<span class="f2">+}'</span>
+<span class="f2">+)</span>
+<span class="f2">+</span>
+<span class="f2">+[ &quot;$body_only&quot; ] || printf '&lt;/pre&gt;</span>
+<span class="f2">+&lt;/body&gt;</span>
+<span class="f2">+&lt;/html&gt;\n'</span>
+</pre>
+</body>
+</html>
