@@ -8,7 +8,7 @@ Each linked html file contains the change log for one file contained in the repo
 ## installation
 
 Copy the files
-- [git_html_listing.sh](git_html_listing.sh) and [ansi2html.sh](ansi2html.sh) into the same directory
+- [git_html_listing.sh](https://raw.githubusercontent.com/MoserMichael/git_html_listing/refs/heads/main/git_html_listing.sh) and [ansi2html.sh](https://raw.githubusercontent.com/MoserMichael/git_html_listing/refs/heads/main/ansi2html.sh) into the same directory
 - you also need the presence of git, sed, gawk
 
 ## Thanks
