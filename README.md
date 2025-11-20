@@ -1,8 +1,8 @@
 # git_html_listing.sh
 
-A shell script for producing a nice html listing for the history of each file.
+A shell script for producing an html listing for the change history of each file in a git repository.
 The script creates a index.html file that contains a link per html file in given git repository.
-Each linked html file contains the change log for one file contained in the repository.
+Each linked html file contains the change log for one file of the repository.
 
 
 ## installation
