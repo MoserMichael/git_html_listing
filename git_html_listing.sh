@@ -56,9 +56,6 @@ script_dir=$(dirname $0)
 script_dir=$(realpath "${script_dir}")
 html_index=""
 
-origin_url=$(git config --get remote.origin.url)
-html_prefix="<html><body><h2>History listing for git repository: ${origin_url}</h2><ul>"
-
 #if [[ -d "$out_dir" ]]; then
 #   rm -rf "$out_dir"
 #fi
@@ -74,6 +71,9 @@ EOF
 mkdir -p "$out_dir"
 
 pushd "$git_dir"
+
+origin_url=$(git config --get remote.origin.url)
+html_prefix="<html><body><h2>History listing for git repository: ${origin_url}</h2><ul>"
 
 for f in $(git ls-files); do
     echo "Processing $f"
