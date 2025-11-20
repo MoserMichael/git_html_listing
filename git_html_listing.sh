@@ -32,15 +32,12 @@ while getopts "hg:o:" opt; do
         git_dir=$OPTARG
         ;;
     o)
-        DOCKER_REGISTRY_REPOSITORY_NAME=$OPTARG
-        ;;
-    r)
-        DOCKER_REGISTRY=$OPTARG
+        out_dir=$OPTARG
         ;;
     v)
-	set -x
-	export PS4='+(${BASH_SOURCE}:${LINENO})'
-	VERBOSE=1
+        set -x
+        export PS4='+(${BASH_SOURCE}:${LINENO})'
+        VERBOSE=1
         ;; 
     *)
         Help "Invalid option"
