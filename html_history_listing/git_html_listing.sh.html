@@ -296,6 +296,41 @@ span { display: inline-block; }
 
 <body class="f9 b9">
 <pre>
+<span class="f3">commit 568c0ac627f28595e8ad3cb81ad63024ca18434b</span>
+Author:     MoserMichael &lt;mosermichael@gmail.com&gt;
+AuthorDate: Thu Nov 20 08:29:50 2025 +0200
+Commit:     MoserMichael &lt;mosermichael@gmail.com&gt;
+CommitDate: Thu Nov 20 08:29:50 2025 +0200
+
+    fix header
+
+:100644 100644 1157340 561c867 M	git_html_listing.sh
+
+<span class="bold">diff --git a/git_html_listing.sh b/git_html_listing.sh</span>
+<span class="bold">index 1157340..561c867 100644</span>
+<span class="bold">--- a/git_html_listing.sh</span>
+<span class="bold">+++ b/git_html_listing.sh</span>
+<span class="f6">@@ -56,9 +56,6 @@</span> script_dir=$(dirname $0)
+ script_dir=$(realpath &quot;${script_dir}&quot;)
+ html_index=&quot;&quot;
+ 
+<span class="f1">-origin_url=$(git config --get remote.origin.url)</span>
+<span class="f1">-html_prefix=&quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for git repository: ${origin_url}&lt;/h2&gt;&lt;ul&gt;&quot;
+-</span>
+ #if [[ -d &quot;$out_dir&quot; ]]; then
+ #   rm -rf &quot;$out_dir&quot;
+ #fi
+<span class="f6">@@ -75,6 +72,9 @@</span> mkdir -p &quot;$out_dir&quot;
+ 
+ pushd &quot;$git_dir&quot;
+ 
+<span class="f2">+origin_url=$(git config --get remote.origin.url)</span>
+<span class="f2">+html_prefix=&quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for git repository: ${origin_url}&lt;/h2&gt;&lt;ul&gt;&quot;
++</span>
+ for f in $(git ls-files); do
+     echo &quot;Processing $f&quot;
+     out_file=&quot;$out_dir/$f&quot;
+
 <span class="f3">commit 68e600ab0f073de653a350bd827deda6926271b0</span>
 Author:     MoserMichael &lt;mosermichael@gmail.com&gt;
 AuthorDate: Thu Nov 20 08:26:00 2025 +0200
@@ -362,8 +397,8 @@ CommitDate: Thu Nov 20 07:42:31 2025 +0200
 <span class="f2">+</span>	<span class="f2">cat &lt;&lt;EOF</span>
 <span class="f2">+Usage: $0 -g &lt;git_repo_directory&gt; -o &lt;html_output_directory&gt; [-v] [-h]</span><span class="b1"> </span>
 <span class="f2">+</span>
-<span class="f2">+A shell script for producing a nice html listing for the history of each file.
-+The script creates a index.html file that contains a link per html file in given git repository.
+<span class="f2">+A shell script for producing a nice html listing for the history of each file.</span>
+<span class="f2">+The script creates a index.html file that contains a link per html file in given git repository.
 +Each linked html file contains the change log for one file contained in the repository.</span>
 <span class="f2">+</span>
 <span class="f2">+</span>
