@@ -2,12 +2,58 @@
 
 # Licence: LGPLv2
 
-out_dir="temp_dir"
+out_dir="html_history_listing"
 git_dir="."
 
+function Help()
+{
+    if [[ $1 != "" ]]; then
+        echo "Error: $*"
+    fi
+
+	cat <<EOF
+Usage: $0 -g <git_repo_directory> -o <html_output_directory> [-v] [-h] 
+
+A shell script for producing a nice html listing for the history of each file.
+The script creates a index.html file that contains a link per html file in given git repository.
+Each linked html file contains the change log for one file contained in the repository.
+
+
+EOF
+	exit 1
+}
+
+while getopts "hg:o:" opt; do
+  case ${opt} in
+    h)
+    	Help
+        ;;
+    g)
+        git_dir=$OPTARG
+        ;;
+    o)
+        DOCKER_REGISTRY_REPOSITORY_NAME=$OPTARG
+        ;;
+    r)
+        DOCKER_REGISTRY=$OPTARG
+        ;;
+    v)
+	set -x
+	export PS4='+(${BASH_SOURCE}:${LINENO})'
+	VERBOSE=1
+        ;; 
+    *)
+        Help "Invalid option"
+        ;;
+   esac
+done	
 
 out_dir=$(realpath "${out_dir}")
 git_dir=$(realpath "${git_dir}")
+
+if [[ ! -d "$git_dir" ]]; then
+  Help "git repo directory ${git_dir} does not exist"
+fi
 
 script_dir=$(dirname $0)
 script_dir=$(realpath "${script_dir}")
@@ -19,6 +65,14 @@ html_prefix="<html><body><h2>History listing for git repository: ${origin_url}</
 #if [[ -d "$out_dir" ]]; then
 #   rm -rf "$out_dir"
 #fi
+
+cat <<EOF
+** building html listing **
+
+For repository directory: ${git_dir} 
+html listing directory: ${out_dir}
+
+EOF
 
 mkdir -p "$out_dir"
 
