@@ -296,6 +296,41 @@ span { display: inline-block; }
 
 <body class="f9 b9">
 <pre>
+<span class="f3">commit 68e600ab0f073de653a350bd827deda6926271b0</span>
+Author:     MoserMichael &lt;mosermichael@gmail.com&gt;
+AuthorDate: Thu Nov 20 08:26:00 2025 +0200
+Commit:     MoserMichael &lt;mosermichael@gmail.com&gt;
+CommitDate: Thu Nov 20 08:26:00 2025 +0200
+
+    fix options
+
+:100644 100644 1a25db4 1157340 M	git_html_listing.sh
+
+<span class="bold">diff --git a/git_html_listing.sh b/git_html_listing.sh</span>
+<span class="bold">index 1a25db4..1157340 100644</span>
+<span class="bold">--- a/git_html_listing.sh</span>
+<span class="bold">+++ b/git_html_listing.sh</span>
+<span class="f6">@@ -32,15 +32,12 @@</span> while getopts &quot;hg:o:&quot; opt; do
+         git_dir=$OPTARG
+         ;;
+     o)
+<span class="f1">-        DOCKER_REGISTRY_REPOSITORY_NAME=$OPTARG</span>
+<span class="f1">-        ;;</span>
+<span class="f1">-    r)</span>
+<span class="f1">-        DOCKER_REGISTRY=$OPTARG</span>
+<span class="f2">+        out_dir=$OPTARG</span>
+         ;;
+     v)
+<span class="f1">-	set -x</span>
+<span class="f1">-	export PS4='+(${BASH_SOURCE}:${LINENO})'</span>
+<span class="f1">-	VERBOSE=1</span>
+<span class="f2">+        set -x</span>
+<span class="f2">+        export PS4='+(${BASH_SOURCE}:${LINENO})'</span>
+<span class="f2">+        VERBOSE=1</span>
+         ;; 
+     *)
+         Help &quot;Invalid option&quot;
+
 <span class="f3">commit e2781be8146fa40cb6891240cddc8a57a43bf4ee</span>
 Author:     MoserMichael &lt;mosermichael@gmail.com&gt;
 AuthorDate: Thu Nov 20 07:42:31 2025 +0200
