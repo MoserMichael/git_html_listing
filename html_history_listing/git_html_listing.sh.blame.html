@@ -295,117 +295,115 @@ span { display: inline-block; }
 
 <body class="f9 b9">
 <pre>
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   1) #!/usr/bin/env bash
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   2) </span>
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   3) </span># Licence: LGPLv2
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   4) </span>
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200   5) out_dir=&quot;html_history_listing&quot;
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   6) git_dir=&quot;.&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200   7) </span>
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200   8) function Help()
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200   9) </span>{
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  10) </span>    if [[ $1 != &quot;&quot; ]]; then
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  11) </span>        echo &quot;Error: $*&quot;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  12) </span>    fi
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  13) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  14) </span>	cat &lt;&lt;EOF
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  15) </span>Usage: $0 -g &lt;git_repo_directory&gt; -o &lt;html_output_directory&gt; [-v] [-h] 
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  16) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  17) </span>A shell script for producing a nice html listing for the history of each file.
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  18) </span>The script creates a index.html file that contains a link per html file in given git repository.
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  19) </span>Each linked html file contains the change log for one file contained in the repository.
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  20) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  21) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  22) </span>EOF
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  23) </span>	exit 1
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  24) </span>}
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  25) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  26) </span>while getopts &quot;hg:o:&quot; opt; do
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  27) </span>  case ${opt} in
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  28) </span>    h)
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  29) </span>    	Help
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  30) </span>        ;;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  31) </span>    g)
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  32) </span>        git_dir=$OPTARG
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  33) </span>        ;;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  34) </span>    o)
-<a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael      2025-11-20 08:26:00 +0200  35)         out_dir=$OPTARG
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  36)         ;;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  37) </span>    v)
-<a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael      2025-11-20 08:26:00 +0200  38)         set -x
-<span class="f6"><a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael      2025-11-20 08:26:00 +0200  39) </span>        export PS4='+(${BASH_SOURCE}:${LINENO})'
-<span class="f6"><a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael      2025-11-20 08:26:00 +0200  40) </span>        VERBOSE=1
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  41)         ;; 
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  42) </span>    *)
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  43) </span>        Help &quot;Invalid option&quot;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  44) </span>        ;;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  45) </span>   esac
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  46) </span>done	
-<a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael      2025-11-20 07:23:47 +0200  47) 
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  48) out_dir=$(realpath &quot;${out_dir}&quot;)
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  49) </span>git_dir=$(realpath &quot;${git_dir}&quot;)
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  50) </span>
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  51) if [[ ! -d &quot;$git_dir&quot; ]]; then
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  52) </span>  Help &quot;git repo directory ${git_dir} does not exist&quot;
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  53) </span>fi
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  54) </span>
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  55) script_dir=$(dirname $0)
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  56) </span>script_dir=$(realpath &quot;${script_dir}&quot;)
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  57) </span>html_index=&quot;&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  58) </span>
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  59) #if [[ -d &quot;$out_dir&quot; ]]; then
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  60) </span>#   rm -rf &quot;$out_dir&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  61) </span>#fi
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  62) </span>
-<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  63) cat &lt;&lt;EOF
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  64) </span>** building html listing **
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  65) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  66) </span>For repository directory: ${git_dir} 
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  67) </span>html listing directory: ${out_dir}
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  68) </span>
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  69) </span>EOF
-<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael      2025-11-20 07:42:31 +0200  70) </span>
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  71) mkdir -p &quot;$out_dir&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  72) </span>
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  73) </span>pushd &quot;$git_dir&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  74) </span>
-<a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael      2025-11-20 08:29:50 +0200  75) origin_url=$(git config --get remote.origin.url)
-<span class="f6"><a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael      2025-11-20 08:29:50 +0200  76) </span>html_prefix=&quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for git repository: ${origin_url}&lt;/h2&gt;&lt;ul&gt;&quot;
-<span class="f6"><a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael      2025-11-20 08:29:50 +0200  77) </span>
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  78) for f in $(git ls-files); do
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  79) </span>    echo &quot;Processing $f&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  80) </span>    out_file=&quot;$out_dir/$f&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  81) </span>    
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  82) </span>    dname=$(dirname &quot;$out_file&quot;)
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  83) </span>    mkdir -p &quot;$dname&quot;
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  84) </span>
-<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200  85)     #link_name=${f}
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  86)     link_path=&quot;${f}.html&quot;
-<a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael      2025-11-20 07:23:47 +0200  87)     out_html_path=&quot;${out_file}.html&quot;
-<span class="f6"><a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael      2025-11-20 07:23:47 +0200  88) </span>
-<span class="f6"><a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael      2025-11-20 07:23:47 +0200  89) </span>    echo &quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for file: ${f}&lt;/h2&gt;&quot; &gt;${out_html_path}
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  90) 
-<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200  91)     git log --color=always --follow --pretty=fuller -p --ignore-cr-at-eol --raw ${f} | ${script_dir}/ansi2html.sh | sed -E 's/^&lt;span class=&quot;f3&quot;&gt;commit (([0-9a-f]{8})[0-9a-f]+)&lt;\/span&gt;/&lt;span class=&quot;f3&quot;&gt;&lt;a name=&quot;\2&quot;\/&gt;commit \1&lt;\/span&gt;/' &gt;${out_html_path} 
-<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200  92) </span>    
-<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200  93) </span>    blame_link_path=&quot;${f}.blame.html&quot;
-<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200  94) </span>    out_blame_html_path=&quot;${out_file}.blame.html&quot;
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200  95) 
-<a href="git_html_listing.sh.html#ba16ef1f">ba16ef1f</a> (MoserMichael      2026-01-06 07:55:37 +0200  96)     cross_link_path=$(basename &quot;${link_path}&quot;)
-<span class="f6"><a href="git_html_listing.sh.html#ba16ef1f">ba16ef1f</a> (MoserMichael      2026-01-06 07:55:37 +0200  97) </span>
-<a href="git_html_listing.sh.html#00000000">00000000</a> (Not Committed Yet 2026-01-06 08:19:10 +0200  98)     #git blame --color-lines  ${f} | ${script_dir}/ansi2html.sh &gt;${out_blame_html_path}
-<span class="f6"><a href="git_html_listing.sh.html#00000000">00000000</a> (Not Committed Yet 2026-01-06 08:19:10 +0200  99) </span>
-<span class="f6"><a href="git_html_listing.sh.html#00000000">00000000</a> (Not Committed Yet 2026-01-06 08:19:10 +0200 100) </span>    #git blame --color-lines  ${f} | sed 's/^\^//'  | sed -E 's@^&lt;span class=&quot;f([0-9]+)&quot;&gt;\\^@&lt;span class=&quot;f\1&quot;&gt;@'  | ${script_dir}/ansi2html.sh |  sed -E &quot;s@^&lt;span class=\&quot;f([0-9]+)\&quot;&gt;([0-9a-f]+)@&lt;span class=\&quot;f\1\&quot;&gt;&lt;a href=\&quot;${cross_link_path}#\2\&quot;&gt;\2&lt;/a&gt;@&quot; | sed -E &quot;s@^([0-9a-f]+)@&lt;a href=\&quot;${cross_link_path}#\1\&quot;&gt;\1&lt;/a&gt;@&quot; &gt;${out_blame_html_path}
-<span class="f6"><a href="git_html_listing.sh.html#00000000">00000000</a> (Not Committed Yet 2026-01-06 08:19:10 +0200 101) </span>
-<span class="f6"><a href="git_html_listing.sh.html#00000000">00000000</a> (Not Committed Yet 2026-01-06 08:19:10 +0200 102) </span>    git blame --root --color-lines  ${f} | ${script_dir}/ansi2html.sh |  sed -E &quot;s@^&lt;span class=\&quot;f([0-9]+)\&quot;&gt;([0-9a-f]+)@&lt;span class=\&quot;f\1\&quot;&gt;&lt;a href=\&quot;${cross_link_path}#\2\&quot;&gt;\2&lt;/a&gt;@&quot; | sed -E &quot;s@^([0-9a-f]+)@&lt;a href=\&quot;${cross_link_path}#\1\&quot;&gt;\1&lt;/a&gt;@&quot; &gt;${out_blame_html_path}
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 103) 
-<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200 104)     html_index=&quot;${html_index}&lt;li&gt; ${f} &lt;a href=\&quot;${link_path}\&quot;&gt;Log&lt;/a&gt;&amp;nbsp;&lt;a href=\&quot;${blame_link_path}\&quot;&gt;Blame&lt;/a&gt; &quot;
-<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael      2026-01-06 07:41:14 +0200 105) </span>    
-<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 106) done
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 107) </span>
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 108) </span>echo &quot;${html_prefix}${html_index}&quot; &gt;${out_dir}/index.html
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 109) </span>
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 110) </span>
-<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael      2025-11-20 07:17:15 +0200 111) </span>
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   1) #!/usr/bin/env bash
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   2) </span>
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   3) </span># Licence: LGPLv2
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   4) </span>
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200   5) out_dir=&quot;html_history_listing&quot;
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   6) git_dir=&quot;.&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200   7) </span>
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200   8) function Help()
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200   9) </span>{
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  10) </span>    if [[ $1 != &quot;&quot; ]]; then
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  11) </span>        echo &quot;Error: $*&quot;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  12) </span>    fi
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  13) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  14) </span>	cat &lt;&lt;EOF
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  15) </span>Usage: $0 -g &lt;git_repo_directory&gt; -o &lt;html_output_directory&gt; [-v] [-h] 
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  16) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  17) </span>A shell script for producing a nice html listing for the history of each file.
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  18) </span>The script creates a index.html file that contains a link per html file in given git repository.
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  19) </span>Each linked html file contains the change log for one file contained in the repository.
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  20) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  21) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  22) </span>EOF
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  23) </span>	exit 1
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  24) </span>}
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  25) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  26) </span>while getopts &quot;hg:o:&quot; opt; do
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  27) </span>  case ${opt} in
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  28) </span>    h)
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  29) </span>    	Help
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  30) </span>        ;;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  31) </span>    g)
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  32) </span>        git_dir=$OPTARG
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  33) </span>        ;;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  34) </span>    o)
+<a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael 2025-11-20 08:26:00 +0200  35)         out_dir=$OPTARG
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  36)         ;;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  37) </span>    v)
+<a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael 2025-11-20 08:26:00 +0200  38)         set -x
+<span class="f6"><a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael 2025-11-20 08:26:00 +0200  39) </span>        export PS4='+(${BASH_SOURCE}:${LINENO})'
+<span class="f6"><a href="git_html_listing.sh.html#68e600ab">68e600ab</a> (MoserMichael 2025-11-20 08:26:00 +0200  40) </span>        VERBOSE=1
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  41)         ;; 
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  42) </span>    *)
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  43) </span>        Help &quot;Invalid option&quot;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  44) </span>        ;;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  45) </span>   esac
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  46) </span>done	
+<a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael 2025-11-20 07:23:47 +0200  47) 
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  48) out_dir=$(realpath &quot;${out_dir}&quot;)
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  49) </span>git_dir=$(realpath &quot;${git_dir}&quot;)
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  50) </span>
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  51) if [[ ! -d &quot;$git_dir&quot; ]]; then
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  52) </span>  Help &quot;git repo directory ${git_dir} does not exist&quot;
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  53) </span>fi
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  54) </span>
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  55) script_dir=$(dirname $0)
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  56) </span>script_dir=$(realpath &quot;${script_dir}&quot;)
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  57) </span>html_index=&quot;&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  58) </span>
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  59) #if [[ -d &quot;$out_dir&quot; ]]; then
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  60) </span>#   rm -rf &quot;$out_dir&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  61) </span>#fi
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  62) </span>
+<a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  63) cat &lt;&lt;EOF
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  64) </span>** building html listing **
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  65) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  66) </span>For repository directory: ${git_dir} 
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  67) </span>html listing directory: ${out_dir}
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  68) </span>
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  69) </span>EOF
+<span class="f6"><a href="git_html_listing.sh.html#e2781be8">e2781be8</a> (MoserMichael 2025-11-20 07:42:31 +0200  70) </span>
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  71) mkdir -p &quot;$out_dir&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  72) </span>
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  73) </span>pushd &quot;$git_dir&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  74) </span>
+<a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael 2025-11-20 08:29:50 +0200  75) origin_url=$(git config --get remote.origin.url)
+<span class="f6"><a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael 2025-11-20 08:29:50 +0200  76) </span>html_prefix=&quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for git repository: ${origin_url}&lt;/h2&gt;&lt;ul&gt;&quot;
+<span class="f6"><a href="git_html_listing.sh.html#568c0ac6">568c0ac6</a> (MoserMichael 2025-11-20 08:29:50 +0200  77) </span>
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  78) for f in $(git ls-files); do
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  79) </span>    echo &quot;Processing $f&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  80) </span>    out_file=&quot;$out_dir/$f&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  81) </span>    
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  82) </span>    dname=$(dirname &quot;$out_file&quot;)
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  83) </span>    mkdir -p &quot;$dname&quot;
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  84) </span>
+<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200  85)     #link_name=${f}
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  86)     link_path=&quot;${f}.html&quot;
+<a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael 2025-11-20 07:23:47 +0200  87)     out_html_path=&quot;${out_file}.html&quot;
+<span class="f6"><a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael 2025-11-20 07:23:47 +0200  88) </span>
+<span class="f6"><a href="git_html_listing.sh.html#1aba1075">1aba1075</a> (MoserMichael 2025-11-20 07:23:47 +0200  89) </span>    echo &quot;&lt;html&gt;&lt;body&gt;&lt;h2&gt;History listing for file: ${f}&lt;/h2&gt;&quot; &gt;${out_html_path}
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  90) 
+<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200  91)     git log --color=always --follow --pretty=fuller -p --ignore-cr-at-eol --raw ${f} | ${script_dir}/ansi2html.sh | sed -E 's/^&lt;span class=&quot;f3&quot;&gt;commit (([0-9a-f]{8})[0-9a-f]+)&lt;\/span&gt;/&lt;span class=&quot;f3&quot;&gt;&lt;a name=&quot;\2&quot;\/&gt;commit \1&lt;\/span&gt;/' &gt;${out_html_path} 
+<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200  92) </span>    
+<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200  93) </span>    blame_link_path=&quot;${f}.blame.html&quot;
+<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200  94) </span>    out_blame_html_path=&quot;${out_file}.blame.html&quot;
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200  95) 
+<a href="git_html_listing.sh.html#ba16ef1f">ba16ef1f</a> (MoserMichael 2026-01-06 07:55:37 +0200  96)     cross_link_path=$(basename &quot;${link_path}&quot;)
+<span class="f6"><a href="git_html_listing.sh.html#ba16ef1f">ba16ef1f</a> (MoserMichael 2026-01-06 07:55:37 +0200  97) </span>
+<a href="git_html_listing.sh.html#089c1ca9">089c1ca9</a> (MoserMichael 2026-01-06 08:20:32 +0200  98)     #git blame --color-lines  ${f} | ${script_dir}/ansi2html.sh &gt;${out_blame_html_path}
+<span class="f6"><a href="git_html_listing.sh.html#089c1ca9">089c1ca9</a> (MoserMichael 2026-01-06 08:20:32 +0200  99) </span>
+<span class="f6"><a href="git_html_listing.sh.html#089c1ca9">089c1ca9</a> (MoserMichael 2026-01-06 08:20:32 +0200 100) </span>    git blame --root --color-lines  ${f} | ${script_dir}/ansi2html.sh |  sed -E &quot;s@^&lt;span class=\&quot;f([0-9]+)\&quot;&gt;([0-9a-f]+)@&lt;span class=\&quot;f\1\&quot;&gt;&lt;a href=\&quot;${cross_link_path}#\2\&quot;&gt;\2&lt;/a&gt;@&quot; | sed -E &quot;s@^([0-9a-f]+)@&lt;a href=\&quot;${cross_link_path}#\1\&quot;&gt;\1&lt;/a&gt;@&quot; &gt;${out_blame_html_path}
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 101) 
+<a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200 102)     html_index=&quot;${html_index}&lt;li&gt; ${f} &lt;a href=\&quot;${link_path}\&quot;&gt;Log&lt;/a&gt;&amp;nbsp;&lt;a href=\&quot;${blame_link_path}\&quot;&gt;Blame&lt;/a&gt; &quot;
+<span class="f6"><a href="git_html_listing.sh.html#451c3912">451c3912</a> (MoserMichael 2026-01-06 07:41:14 +0200 103) </span>    
+<a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 104) done
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 105) </span>
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 106) </span>echo &quot;${html_prefix}${html_index}&quot; &gt;${out_dir}/index.html
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 107) </span>
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 108) </span>
+<span class="f6"><a href="git_html_listing.sh.html#0e6c62ee">0e6c62ee</a> (MoserMichael 2025-11-20 07:17:15 +0200 109) </span>
 </pre>
 </body>
 </html>
