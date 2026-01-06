@@ -1,8 +1,12 @@
 # git_html_listing.sh
 
 A shell script for producing an html listing for the change history of each file in a git repository.
-The script creates a index.html file that contains a link per html file in given git repository.
-Each linked html file contains the change log for one file of the repository.
+
+The script creates a index.html file with an entry per file that is part of the git repository.
+
+Each entry contains a link to the history log of the file and a  link to git blame listing for that file.  
+
+Each line of the git blame listing is linking to the commit where it came from.
 
 
 ## installation
@@ -14,7 +18,6 @@ Copy the files
 ## Thanks
 
 This script uses [ansi2html.sh](https://www.pixelbeat.org/scripts/ansi2html.sh)
-
 
 ## Example html listing for this repository
   
