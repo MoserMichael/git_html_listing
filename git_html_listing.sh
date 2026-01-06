@@ -93,7 +93,9 @@ for f in $(git ls-files); do
     blame_link_path="${f}.blame.html"
     out_blame_html_path="${out_file}.blame.html"
 
-    git blame --color-lines  ${f} | ${script_dir}/ansi2html.sh |  sed -E "s@^<span class=\"f([0-9]+)\">([0-9a-f]+)@<span class=\"f\1\"><a href=\"${link_path}#\2\">\2</a>@" >${out_blame_html_path}
+    cross_link_path=$(basename "${link_path}")
+
+    git blame --color-lines  ${f} | ${script_dir}/ansi2html.sh |  sed -E "s@^<span class=\"f([0-9]+)\">([0-9a-f]+)@<span class=\"f\1\"><a href=\"${cross_link_path}#\2\">\2</a>@" | sed -E "s@^([0-9a-f]+)@<a href=\"${cross_link_path}#\1\">\1</a>@" >${out_blame_html_path}
 
     html_index="${html_index}<li> ${f} <a href=\"${link_path}\">Log</a>&nbsp;<a href=\"${blame_link_path}\">Blame</a> "
     
